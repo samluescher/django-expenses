@@ -1,17 +1,35 @@
-from distutils.core import setup
+# encoding=utf8
+import os
+from setuptools import setup, find_packages
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+README = read('README.md')
 
 setup(
-    name='django-expenses',
-    version='0.9.0',
-    author='Samuel Luescher',
-    author_email='sam@luescher.org',
-    packages=['expenses'],
-    scripts=[],
-    url='http://github.com/samluescher/django-expenses',
-    license='LICENSE',
-    description='',
-    long_description=open('README.md').read(),
-    install_requires=[
-        "Django >= 1.3"
-    ],
+    name = "django-expenses",
+    version = "0.7.0",
+    url = 'http://github.com/samluescher/django-expenses',
+    license = 'BSD',
+    description = "",
+    long_description = README,
+
+    author = u'Samuel Luescher',
+    author_email = 'sam at luescher dot org',
+    
+    packages = find_packages(),
+    include_package_data=True,
+
+    classifiers = [
+        'Development Status :: 4 - Beta',
+        'Framework :: Django',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Topic :: Internet :: WWW/HTTP',
+    ]
 )
+
+print find_packages()
