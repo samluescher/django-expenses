@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-07 11:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: admin.py:15
+msgid "Reset bill for selected entries"
+msgstr "Rechnung für ausgewählte Einträge zurücksetzen."
+
+#: admin.py:84
+msgid "You can only change your own entries."
+msgstr "Nur eigene Einträge können geändert werden."
+
+#: admin.py:107
+#, python-format
+msgid "Bill %s was saved."
+msgstr "Abrechnung %s ist gespeichert."
+
+#: models.py:23
+msgid "Group"
+msgstr "Gruppe"
+
+#: models.py:24 templates/admin/expenses/expense/change_list.html:10
+msgid "Groups"
+msgstr "Gruppen"
+
+#: models.py:44
+msgid "name"
+msgstr "Name"
+
+#: models.py:45
+msgid "default"
+msgstr "Voreinstellung"
+
+#: models.py:48
+msgid "expense type"
+msgstr "Spesentyp"
+
+#: models.py:49
+msgid "expense types"
+msgstr "Spesentypen"
+
+#: models.py:66
+msgid "created"
+msgstr "erstellt"
+
+#: models.py:67
+msgid "closed"
+msgstr "abgeschlossen"
+
+#: models.py:69
+msgid "reference #"
+msgstr "Referenznr."
+
+#: models.py:70 models.py:71 models.py:88 models.py:96 models.py:97
+msgid "date"
+msgstr "Datum"
+
+#: models.py:72
+msgid "status"
+msgstr "Status"
+
+#: models.py:75 models.py:90
+msgid "bill"
+msgstr "Abrechnung"
+
+#: models.py:76
+msgid "bills"
+msgstr "Abrechnungen"
+
+#: models.py:89 templates/admin/expenses/expense/change_list.html:13
+msgid "user"
+msgstr "Benutzer"
+
+#: models.py:91
+msgid "amount"
+msgstr "Betrag"
+
+#: models.py:92
+msgid "type"
+msgstr "Typ"
+
+#: models.py:93
+msgid "group"
+msgstr "Gruppe"
+
+#: models.py:94
+msgid "comment"
+msgstr "Kommentar"
+
+#: models.py:95
+msgid "billed"
+msgstr "abgerechnet"
+
+#: models.py:100
+msgid "expense"
+msgstr "Spesen"
+
+#: models.py:101
+msgid "expenses"
+msgstr "Spesen"
+
+#: models.py:105
+#, python-format
+msgid "%(date)s: %(amount)s (%(user)s)"
+msgstr "%(date)s: %(amount)s (%(user)s)"
+
+#: templates/admin/expenses/expense/change_list.html:6
+msgid "Billing"
+msgstr "Abrechnen"
+
+#: templates/admin/expenses/expense/change_list.html:9
+#: templates/admin/expenses/expense/change_list.html:31
+msgid "Bill"
+msgstr "Abrechnung"
+
+#: templates/admin/expenses/expense/change_list.html:11
+msgid "Types"
+msgstr "Typen"
+
+#: templates/admin/expenses/expense/change_list.html:12
+#: templates/admin/expenses/expense/change_list.html:19
+#: templates/admin/expenses/expense/change_list.html:23
+msgid "Total"
+msgstr "Total"
+
+#: templates/admin/expenses/expense/change_list.html:13
+msgid "Average per user"
+msgstr "Durchschnitt pro Benutzer"
+
+#: templates/admin/expenses/expense/change_list.html:14
+msgid "Average per day"
+msgstr "Durchschnitt pro Tag"
+
+#: templates/admin/expenses/expense/change_list.html:14
+msgid "day"
+msgid_plural "days"
+msgstr[0] "Tag"
+msgstr[1] "Tage"
+
+#: templates/admin/expenses/expense/change_list.html:15
+msgid "from"
+msgstr "von"
+
+#: templates/admin/expenses/expense/change_list.html:16
+msgid "to"
+msgstr "bis"
+
+#: templates/admin/expenses/expense/change_list.html:19
+msgid "User"
+msgstr "Benutzer"
+
+#: templates/admin/expenses/expense/change_list.html:19
+msgid "Entries"
+msgstr "Einträge"
+
+#: templates/admin/expenses/expense/change_list.html:19
+msgid "Balance"
+msgstr "Saldo"
+
+#: templates/admin/expenses/expense/change_list.html:33
+msgid "Are you sure you want to save a bill with these items?"
+msgstr "Soll eine Abrechnung mit diesen Einträgen erstellt werden?"
+
+#: templates/admin/expenses/expense/change_list.html:34
+msgid "Yes, create bill"
+msgstr "Ja, Abrechnung erstellen"
+
+#: templates/admin/expenses/expense/change_list.html:34
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: templates/admin/expenses/expense/change_list.html:40
+msgid "Filter"
+msgstr "Filter"
+
+#~ msgid "groups"
+#~ msgstr "Gruppen"

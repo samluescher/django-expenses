@@ -1,0 +1,44 @@
+{% extends "admin/change_list.html" %}
+{% load admin_list i18n moneyformats %}
+
+{% block filters %}
+    <div id="changelist-filter" style="width: 250px">
+        <h2>{% trans "Billing" %}</h2>
+		<dl style="margin: 1em 0em 1em 0em">
+		{% if expense_info.bill %}
+		<dt>{% trans "Bill" %}</dt><dd style="font-size: 18px; font-weight: bold; margin: .25em 0em .5em 0em;">{{ expense_info.bill }}</dd>{% endif %}
+		<dt>{% trans "Groups" %}</dt><dd>{{ expense_info.groups|join:", " }}</dd>
+		<dt>{% trans "Types" %}</dt><dd>{{ expense_info.types|join:", " }}</dd>
+		<dt>{% trans "Total" %}</dt><dd>{{ expense_info.expenses.total|money }}</dd>
+		<dt>{% trans "Average per user" %}</dt><dd>{{ expense_info.expenses.average_user|money }} ({{ expense_info.expenses.by_user|length }} {% blocktrans count expense_info.expenses.by_user|length as count %}user{% plural %}users{% endblocktrans %})
+		<dt>{% trans "Average per day" %}</dt><dd>{{ expense_info.expenses.average_daily|money }} ({{ expense_info.dates.days }} {% blocktrans count expense_info.dates.days as count %}day{% plural %}days{% endblocktrans %})</dd>
+		<dt>{% trans "from" %}</dt><dd>{{ expense_info.dates.from }}</dd>
+		<dt>{% trans "to" %}</dt><dd>{{ expense_info.dates.to }}</dd>
+		</dl>
+        <table style="margin: 10px">
+    	<thead><th>{% trans "User" %}</th><th>{% trans "Entries" %}</th><th>{% trans "Total" %}</th><th>{% trans "Balance" %}</th></thead>
+        {% for item in expense_info.expenses.by_user %}
+    	<tr><td style="text-align: left">{{ item.user }}</td><td style="text-align: right">{{ item.count }}</td><td style="text-align: right">{{ item.total|money }}</td><td style="text-align: right">{{ item.balance|money }}</td></tr>
+        {% endfor %}
+    	<tr><td style="text-align: left; font-weight: bold;">{% trans "Total" %}</td><td style="text-align: right; font-weight: bold;">{{ expense_info.expenses.count }}</td><td style="text-align: right; font-weight: bold;">{{ expense_info.expenses.total|money }}</td><td style="text-align: right"></td></tr>
+        </table>
+        
+        {% if bill_url %}
+        <form method="post" action="{{ bill_url }}">
+        {% csrf_token %}
+        {% if not bill_confirm %}
+        <input type="hidden" name="confirm" value="1" />
+        <p><input type="submit" value="{% trans "Bill" %}" />
+        {% else %}
+        <p>{% trans "Are you sure you want to save a bill with these items?" %}</p>
+        <p><input type="submit" value="{% trans "Yes, create bill" %}" /> <a href="{% url admin:expenses_expense_changelist %}">{% trans "Cancel" %}</a>
+        {% endif %}
+        </form>
+        {% endif %}
+        
+      {% if cl.has_filters %}
+        <h2>{% trans 'Filter' %}</h2>
+        {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+      {% endif %}
+   </div>
+{% endblock %}
