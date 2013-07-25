@@ -31,7 +31,7 @@
         <p><input type="submit" value="{% trans "Bill" %}" />
         {% else %}
         <p>{% trans "Are you sure you want to save a bill with these items?" %}</p>
-        <p><input type="submit" value="{% trans "Yes, create bill" %}" /> <a href="{% url admin:expenses_expense_changelist %}">{% trans "Cancel" %}</a>
+        <p><input type="submit" value="{% trans "Yes, create bill" %}" /> <a href="{% url "admin:expenses_expense_changelist" %}">{% trans "Cancel" %}</a>
         {% endif %}
         </form>
         {% endif %}
